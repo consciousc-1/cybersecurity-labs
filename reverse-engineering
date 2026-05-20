@@ -1,0 +1,29 @@
+# String Lab Analysis
+
+   ## Lab Creator
+   Marcus Hutchins
+
+   ## Difficulty
+   Easy 
+
+   ## Objective
+   Find the real flag hidden among thousands of fake strings in an executable.
+   
+   ## Lab Details
+   - **Type:** Binary Reverse Engineering / Static Analysis
+   - **Tools:** Ghidra 12.1
+   - **Target:** Windows 11 ARM VM
+   - **Difficulty:** Marcus Hutchins 1/5
+   
+   ## Approach
+   1. Import executable into Ghidra
+   2. Analyze .data and .rdata sections
+   3. Identify which string is actually used by the program
+   4. Submit flag
+   
+   ## Progress
+   - [x] Set up Ghidra environment
+   - [ ] Import and analyze executable
+   - [ ] Extract strings from binary
+   - [ ] Identify real flag
+   - [ ] Document findings
