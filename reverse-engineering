@@ -1,4 +1,3 @@
-```markdown
 # String Lab Analysis - Complete Walkthrough
 
 ## Overview
@@ -174,6 +173,3 @@ The challenge's title "Strings" and the "needle in a haystack" metaphor were lit
 Successfully completed String Lab 1 using static binary analysis in Ghidra. The challenge demonstrated that finding meaningful data in compiled executables requires understanding program execution flow and variable usage, not just identifying isolated strings. The breakthrough came from examining the actual code logic (via Decompiler) rather than relying solely on cross-reference analysis.
 
 **Key Takeaway:** In reverse engineering, understand not just WHAT data exists, but HOW the program uses it.
-```
-
-This documents your entire investigation from start to finish! 🎉
