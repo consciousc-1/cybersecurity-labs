@@ -12,7 +12,7 @@ Build a sheduled kql rule that detects brute force login attempts
 
 ## Tools Used
 - SIEM (Sentinel)
-- Azure free trial (10 GB/day, 31-day trial)
+- Azure 
 
 ## Key Skill
 Kql query writing and analytic rule configuration
@@ -26,15 +26,13 @@ Kql query writing and analytic rule configuration
 
 ### Phase 1: Environment Setup
 
--Created Azure Log Analytics workspace (sentinelfirstlab, East US)
--Enabled Microsoft Sentinel on the workspace
--Confirmed free trial active: 10 GB/day for 31 days
--Navigated to Microsoft Defender portal (analytics rules were migrated there from the Azure portal)
--Connected Sentinel workspace to Defender XDR (Status: Connected)
+- Navigated from Anzure Sentinel to Microsoft Defender portal 
 
 ### Phase 2: Analytics Rule Creation
 
-- Navigated to Microsoft Sentinel → Configuration → Analytics
+Inside Defender Portal Side Menu
+
+- Microsoft Sentinel - Configuration - Analytics 
 - Selected + Create → Scheduled query rule
 - Configured General tab:
   
@@ -58,6 +56,11 @@ kqlSecurityEvent
     bin(TimeGenerated, 5m)
 | where FailedAttempts > 10
 | project TimeGenerated, TargetAccount, IpAddress, FailedAttempts
+
+
+
+Note -- explain kql better  --
+
 
 Query logic breakdown:
 LinePurposeSecurityEventQuery the Windows Security event log tablewhere EventID == 4625Filter for failed logon events onlywhere TimeGenerated > ago(1h)Scope to the last hour of datasummarize ... bin(TimeGenerated, 5m)Count failures per account and IP in 5-minute windowswhere FailedAttempts > 10Threshold — more than 10 failures signals an attack, not a typoproject ...Output only relevant columns for triage
