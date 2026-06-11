@@ -1,69 +1,64 @@
-# Brute Force Attack Detection Rule Setup in Sentinel - Complete Walktrough
+# Brute Force Attack Detection Rule Setup in Sentinel - Complete Walkthrough
 
 ## Overview
 Setting up a brute force attack (T1110) detection rule in Microsoft Sentinel SIEM 
 
 ## Objective
-Build a sheduled kql rule that detects brute force login attempts 
+Build a scheduled kql rule that detects brute force login attempts 
 
 ## Data Source
 - Windows Security Events - Event ID 4625 - failed login attempt
 
 
 ## Tools Used
-- SIEM (Sentinel)
-- Azure 
+- SIEM (Azure Sentinel)
+- Sentinel Defender 
 
 ## Key Skill
 Kql query writing and analytic rule configuration
 
 
 ## MITRE ATT&CK
-- T1110 – Brute Force
+T1110 – Brute Force
 
 
 ## Complete Methodology & Investigation
 
 ### Phase 1: Environment Setup
 
-- Navigated from Anzure Sentinel to Microsoft Defender portal 
+- Navigated from Azure Sentinel to Microsoft Defender portal 
 
 ### Phase 2: Analytics Rule Creation
 
 Inside Defender Portal Side Menu
 
 - Microsoft Sentinel - Configuration - Analytics 
-- Selected + Create → Scheduled query rule
+- Selected then Create to Scheduled query rule
 - Configured General tab:
   
-Name: Brute Force Detection - Failed Logons
-Severity: Medium
-Status: Enabled
-MITRE Tactic: Credential Access
-MITRE Technique: T1110 — Brute Force
+- Name: Brute Force Detection - Failed Logons
+- Severity: Medium
+- Status: Enabled
+- MITRE Tactic: Credential Access
+- MITRE Technique: T1110 — Brute Force
 
 
 
 ### Phase 3: Detection Logic — KQL Query
 
-Wrote the following KQL detection rule targeting Event ID 4625 (Windows failed logon):
-kqlSecurityEvent
+Wrote the following KQL detection rule to target Event ID 4625 (Windows failed logon):
+
+SecurityEvent
 | where EventID == 4625
 | where TimeGenerated > ago(1h)
-| summarize FailedAttempts = count() by
-    TargetAccount,
-    IpAddress,
+| summarize FailedAttempts = count() by 
+    TargetAccount, 
+    IpAddress, 
     bin(TimeGenerated, 5m)
 | where FailedAttempts > 10
 | project TimeGenerated, TargetAccount, IpAddress, FailedAttempts
 
 
-
-Note -- explain kql better  --
-
-
-Query logic breakdown:
-LinePurposeSecurityEventQuery the Windows Security event log tablewhere EventID == 4625Filter for failed logon events onlywhere TimeGenerated > ago(1h)Scope to the last hour of datasummarize ... bin(TimeGenerated, 5m)Count failures per account and IP in 5-minute windowswhere FailedAttempts > 10Threshold — more than 10 failures signals an attack, not a typoproject ...Output only relevant columns for triage
 
 ### Phase 4: Rule Scheduling & Threshold
 
@@ -92,3 +87,21 @@ Ran "Test with current data" against the workspace.
 
 Result: 0 alerts, flat baseline
 Interpretation: No SecurityEvent data is currently ingesting — the rule is valid and live, the environment is simply clean. This is the expected baseline state. The rule will fire automatically when Event ID 4625 data exceeds the threshold.
+
+### Possible Brute Force Attacks collected by query 
+
+Credential Access through password guessing or password spraying 
+
+### False Positive Indicators in SIEM report 
+
+- Failures from internal server and Ip adress could hint to expired credentials or forgotten password
+- User forgot password is seen with usually low count of login attempts from one Ip adress during business hours
+- Ongoing pen testing or vulnerability scan 
+
+### True Positive Indicators
+- Source IP isn't in EDR or SIEM allowlist 
+- logon attempts target multiple accounts (password spraying) but not detectable with this rule due to low count logon attempts for each account
+- multiple failures from same IP followed from a successful login
+- Websites like Virus Total flag source Ip address as suspicious 
+- Logon attempts made  outside of business hours with no change management context - no scheduled maintenance, updates for that time frame 
+
