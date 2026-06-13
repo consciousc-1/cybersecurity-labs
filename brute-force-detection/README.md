@@ -12,7 +12,9 @@ Build a scheduled KQL rule that detects brute force login attempts
 KQL query writing and analytics rule configuration
 ## MITRE ATT&CK
 Credential Access - T1110 – Brute Force
+
 <img width="860" height="633" alt="Screenshot 2026-06-13 at 14 09 46" src="https://github.com/user-attachments/assets/755ecbd9-de95-4f44-bdf3-fee2c01c96e7" />
+
 ## Complete Methodology & Investigation
 ### Phase 1: Environment Setup
 - Navigated from Azure Sentinel to Microsoft Defender portal 
