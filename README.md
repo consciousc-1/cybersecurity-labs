@@ -1,12 +1,23 @@
 # Cybersecurity Labs
 
+SOC analyst labs covering threat detection and investigation.
+Built while preparing for a SOC 1 analyst role.
+CompTIA Security+ and Google Cybersecurity certified.
+
 ## Projects
-- Phishing Investigation
-- Brute Force Detection
-- Windows Event Analysis
-- Port Scan Detection
+
+- [Brute Force Detection](brute-force-detection/) — Sentinel KQL detection rule for failed-logon brute force (T1110)
+- [Phishing Investigation](phishing-investigation/) — Email-based phishing analysis (T1566)
 
 ## Skills
-- SIEM (Splunk)
-- Windows Logs
-- MITRE ATT&CK
+
+- SIEM — Microsoft Sentinel (KQL detection rules)
+- Windows Security Event analysis (Event ID 4625)
+- MITRE ATT&CK (T1110, T1566)
+- Threat detection & triage
+
+## Roadmap
+
+- Open-source threat intelligence (VirusTotal, AbuseIPDB, Shodan, OTX)
+- DNSSEC and DNS security
+- Additional MITRE techniques (T1078 Valid Accounts)
