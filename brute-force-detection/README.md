@@ -17,11 +17,22 @@ Credential Access - T1110 – Brute Force
 
 ## Complete Methodology & Investigation
 ### Phase 1: Environment Setup
-- Navigated from Azure Sentinel to Microsoft Defender portal 
+- Navigated from Azure Sentinel to Microsoft Defender portal
+
+<img width="1209" height="567" alt="Screenshot 2026-06-13 at 14 20 09" src="https://github.com/user-attachments/assets/b118975f-f75c-40f6-968f-2a045390479b" />
+
+
 ### Phase 2: Analytics Rule Creation
 Inside Defender Portal Side Menu:
-- Microsoft Sentinel - Configuration - Analytics 
+- Microsoft Sentinel - Configuration - Analytics
+
+<img width="380" height="753" alt="Screenshot 2026-06-13 at 14 23 03" src="https://github.com/user-attachments/assets/bbdb9ca7-a833-4d8e-afca-7ced6c900fa0" />
+  
 - Selected then Create to Scheduled query rule
+
+<img width="463" height="190" alt="Screenshot 2026-06-13 at 14 25 33" src="https://github.com/user-attachments/assets/c38d983b-8e90-478d-a223-30e1d4ed8ff6" />
+
+  
 - Configured General tab:
   
 - Name: Brute Force Detection - Failed Logons
@@ -29,6 +40,9 @@ Inside Defender Portal Side Menu:
 - Status: Enabled
 - MITRE Tactic: Credential Access
 - MITRE Technique: T1110 — Brute Force
+
+
+
 ### Phase 3: Detection Logic — KQL Query
 Wrote the following KQL detection rule to target Event ID 4625 (Windows failed logon):
 
