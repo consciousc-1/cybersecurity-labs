@@ -53,20 +53,30 @@ Alert grouping: Enabled — group alerts if all entities match
 Time window: 5 hours
 Incident correlation: Tenant default
 Explanation: grouping related alerts into one incident gives an analyst the full attack picture rather than fragmented noise
+
 ### Phase 6: Results Simulation
-Ran the query via the Advanced hunting panel against Log Analytics data. Result: 0 alerts, flat baseline.
-Interpretation: No SecurityEvent data is currently ingesting — the rule is valid and live, the environment is simply clean. This is the expected baseline state. The rule will fire automatically when Event ID 4625 data exceeds the threshold.
+Ran the query via the Advanced hunting panel against Log Analytics data. 
+Result: 0 alerts, flat baseline.
+Interpretation: No SecurityEvent data is currently ingesting — the rule is valid and live, the environment is simply clean. 
+This is the expected baseline state. The rule will fire automatically when Event ID 4625 data exceeds the threshold.
+
 ### Possible Brute Force Attacks collected by query 
+
 Credential Access through password guessing
-- not password cracking — needs stolen hashes to be cracked offline
-- not password spraying — rule needs over 10 password guesses per account, not one password against multiple accounts
-- not credential stuffing — no guess needed since logon information is available from previous breach
+
+not password cracking — needs stolen hashes to be cracked offline
+not password spraying — rule needs over 10 password guesses per account, not one password against multiple accounts
+not credential stuffing — no guess needed since logon information is available from previous breach
+
 ### False Positive Indicators in SIEM report 
-- Failures from internal server and IP address could hint to expired credentials or forgotten password
-- User forgot password is seen with usually low count of login attempts from one IP address during business hours
-- Ongoing pen testing or vulnerability scan 
+
+Failures from internal server and IP address could hint to expired credentials or forgotten password
+User forgot password is seen with usually low count of login attempts from one IP address during business hours
+Ongoing pen testing or vulnerability scan 
+
 ### True Positive Indicators
-- Source IP isn't in EDR or SIEM allowlist 
-- multiple failures from same IP followed by a successful login
-- Websites like Virus Total flag source IP address as suspicious 
-- Logon attempts made outside of business hours with no change management context - no scheduled maintenance, updates for that time frame.
+
+Source IP isn't in EDR or SIEM allowlist 
+Multiple failures from same IP followed by a successful login
+Websites like Virus Total flag source IP address as suspicious 
+Logon attempts made outside of business hours with no change management context - no scheduled maintenance, updates for that time frame.
