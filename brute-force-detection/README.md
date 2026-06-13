@@ -33,7 +33,7 @@ Inside Defender Portal Side Menu:
 <img width="463" height="190" alt="Screenshot 2026-06-13 at 14 25 33" src="https://github.com/user-attachments/assets/c38d983b-8e90-478d-a223-30e1d4ed8ff6" />
 
   
-- Configured General tab:
+Configured General tab:
   
 - Name: Brute Force Detection - Failed Logons
 - Severity: Medium
@@ -41,7 +41,7 @@ Inside Defender Portal Side Menu:
 - MITRE Tactic: Credential Access
 - MITRE Technique: T1110 — Brute Force
 
-
+<img width="921" height="601" alt="Screenshot 2026-06-13 at 14 27 25" src="https://github.com/user-attachments/assets/9c0d6c42-138c-482f-bf76-0c35cb140188" />
 
 ### Phase 3: Detection Logic — KQL Query
 Wrote the following KQL detection rule to target Event ID 4625 (Windows failed logon):
@@ -55,6 +55,8 @@ Wrote the following KQL detection rule to target Event ID 4625 (Windows failed l
         bin(TimeGenerated, 5m)
     | where FailedAttempts > 10
     | project TimeGenerated, TargetAccount, IpAddress, FailedAttempts
+
+<img width="944" height="502" alt="Screenshot 2026-06-13 at 14 28 57" src="https://github.com/user-attachments/assets/540317e2-5056-4a35-b8b2-9165b1d2cf4f" />
 
 ### Phase 4: Rule Scheduling & Threshold
 Run query every: 5 minutes
