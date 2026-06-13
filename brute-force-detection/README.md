@@ -19,7 +19,9 @@ Kql query writing and analytic rule configuration
 
 
 ## MITRE ATT&CK
-T1110 – Brute Force
+Credential Access - T1110 – Brute Force
+
+<img width="860" height="633" alt="Screenshot 2026-06-13 at 14 09 46" src="https://github.com/user-attachments/assets/755ecbd9-de95-4f44-bdf3-fee2c01c96e7" />
 
 
 ## Complete Methodology & Investigation
