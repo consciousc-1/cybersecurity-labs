@@ -64,6 +64,8 @@ Lookup data from last: 1 hour
 
 <img width="909" height="366" alt="Screenshot 2026-06-13 at 14 29 12" src="https://github.com/user-attachments/assets/d509a86b-711c-4d77-8edb-fd5635367498" />
 
+
+
 Alert threshold: generate alert when results > 0
 Note: the KQL already filters for >10 failures, so any result from the query is inherently suspicious
 
@@ -96,9 +98,14 @@ Explanation: grouping related alerts into one incident gives an analyst the full
 
 ### Phase 6: Results Simulation
 Ran the query via the Advanced hunting panel against Log Analytics data. 
+
 Result: 0 alerts, flat baseline.
+
 Interpretation: No SecurityEvent data is currently ingesting — the rule is valid and live, the environment is simply clean. 
 This is the expected baseline state. The rule will apply itself automatically when Event ID 4625 data exceeds the threshold.
+
+<img width="979" height="531" alt="Screenshot 2026-06-13 at 14 27 54" src="https://github.com/user-attachments/assets/747dc7a4-d793-49ab-a371-985d0b29eaa6" />
+
 
 ### Possible Brute Force Attacks collected by query 
 
