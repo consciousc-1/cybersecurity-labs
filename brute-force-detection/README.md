@@ -61,10 +61,19 @@ Wrote the following KQL detection rule to target Event ID 4625 (Windows failed l
 ### Phase 4: Rule Scheduling & Threshold
 Run query every: 5 minutes
 Lookup data from last: 1 hour
+
+<img width="909" height="366" alt="Screenshot 2026-06-13 at 14 29 12" src="https://github.com/user-attachments/assets/d509a86b-711c-4d77-8edb-fd5635367498" />
+
 Alert threshold: generate alert when results > 0
 Note: the KQL already filters for >10 failures, so any result from the query is inherently suspicious
+
+
 Event grouping: Group all events into a single alert
+
 Explanation: prevents alert fatigue — one brute-force burst becomes one incident, not 25 separate alerts
+
+<img width="955" height="563" alt="Screenshot 2026-06-13 at 14 29 21" src="https://github.com/user-attachments/assets/95aaf58c-242f-4d09-9a54-d83e0f927848" />
+
 ### Phase 5: Incident Settings
 Create incidents from alerts: Enabled
 Alert grouping: Enabled — group alerts if all entities match
