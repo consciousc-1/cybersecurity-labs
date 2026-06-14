@@ -76,10 +76,23 @@ Explanation: prevents alert fatigue — one brute-force burst becomes one incide
 
 ### Phase 5: Incident Settings
 Create incidents from alerts: Enabled
+
 Alert grouping: Enabled — group alerts if all entities match
+
+
+<img width="921" height="466" alt="al" src="https://github.com/user-attachments/assets/2ecfa755-cc4c-4947-8502-e07003ee2e39" />
+
 Time window: 5 hours
+
+<img width="833" height="332" alt="la" src="https://github.com/user-attachments/assets/1076bb2c-7099-4f43-bc3a-01e12b97b957" />
+
+
 Incident correlation: Tenant default
+
 Explanation: grouping related alerts into one incident gives an analyst the full attack picture rather than fragmented noise
+
+<img width="847" height="287" alt="Screenshot 2026-06-13 at 14 30 01" src="https://github.com/user-attachments/assets/4bf00e3c-1675-48c3-861f-b81e0ac7b4bf" />
+
 
 ### Phase 6: Results Simulation
 Ran the query via the Advanced hunting panel against Log Analytics data. 
