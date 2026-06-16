@@ -28,15 +28,16 @@ Command and Control (TA0011) // Botnet C2
 ### Phase 1: Sourcing the IOC
 - Browsed the ThreatFox IOC database and selected a suspicious IP flagged as a botnet C2
 - IP: 106.14.116.17 (port 8080)
-- Note: ThreatFox lists the IOC as 106.14.116.17:8080 (IP + port, identifying the exact C2 service), while AbuseIPDB checks reputation at the IP level, so the port is omitted when searching there
+- Note: ThreatFox lists the IOC as 106.14.116.17:8080 (IP + port, identifying the exact C2 service), while AbuseIPDB checks reputation at the IP level, so the port is omitted when searching there as I had to find out 
 
+<img width="1270" height="899" alt="Screenshot 2026-06-16 at 13 48 27" src="https://github.com/user-attachments/assets/9857df22-1b2f-4949-9aec-5abce2113685" />
 
   
 ### Phase 2: ThreatFox
 - IOC (Indicator of Compromise): 106.14.116.17:8080
 - Labels it as botnet_cc — a botnet Command & Control server (C2), meaning this IP controls infected machines (bots)
 - Confidence: 100%, marked as compromised
-- Source: abuse.ch behavioral malware tracking
+
 
   
 ### Phase 3: VirusTotal
