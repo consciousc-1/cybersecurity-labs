@@ -10,7 +10,7 @@ Examine the email's sender and content to find indicators of a phishing attempt,
 A user reported a suspicious email that needs to be investigated to determine whether it is a genuine phishing attempt
 
 ## Tools Used
-- CanIPhish simulator (caniphish.com)
+- Caniphish simulator (caniphish.com)
 - Manual indicator analysis (hover over buttons, inspect source)
 - In a real (non-simulated) case: Any.Run / Joe Sandbox / isolated VM
   
@@ -27,18 +27,23 @@ T1566 — Phishing  // not T1566.002 Spearphishing Link since it's not a targete
 - Received an email claiming to be from American Express asking to confirm a recent card request
 - Subject: Confirm your recent card request
 - The email uses urgency and talks about account-safety to pressure the user into clicking the link
-  
+
+ <img width="1366" height="378" alt="Screenshot 2026-06-16 at 19 15 27" src="https://github.com/user-attachments/assets/2c283ecc-5473-41e6-94a0-307fb974fbfe" />
+
 ### Phase 2: Sender Analysis (spoofed domain)
 - Sender display name: American Express
 - Actual sender domain: alerting-services[.]com (real domain is americanexpress.com)
 - Would check the actual sending domain's registration age via WHOIS
-
 
 ### Phase 3: Content Red Flags
 - Urgency: "To help us keep your account safe, can you please confirm this request?" pressures the user to act fast
 - Action buttons: "Confirm Request" and "Something's Wrong" are designed to be clicked
 - Credential harvest: "sign in to your account" link aims to send the user to a fake login page to steal credentials
 - Brand impersonation: uses the American Express logo and styling to look legitimate
+
+<img width="1291" height="784" alt="Screenshot 2026-06-16 at 19 15 48" src="https://github.com/user-attachments/assets/4e23fb8b-8aa1-49d6-8310-7c9720af4211" />
+
+  
 - Would hover (NOT click) over buttons to reveal the real URL or view the raw source via "Inspect"
   
 ### Phase 4: Findings
