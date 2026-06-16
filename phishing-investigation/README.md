@@ -1,20 +1,10 @@
-# Phishing Investigation
-
-## Scenario
-User reported a suspicious email.
-
-## Tools
-- Email header analyzer
-- VirusTotal
-
-## Investigation
-Checked sender domain and SPF records.
-
-## Findings
-Spoofed domain used for phishing.
-
-## MITRE ATT&CK
-T1566 – Phishing
-
-## Detection Idea
-Flag emails with failed SPF + suspicious domains.
+## Overview
+## Objective
+## Tools Used
+## MITRE ATT&CK — T1566 Phishing
+## Complete Methodology & Investigation
+### Phase 1: Email Received
+### Phase 2: Header Analysis (SPF / DKIM / DMARC)
+### Phase 3: Domain & Link Reputation (VirusTotal)
+### Phase 4: Findings
+### Phase 5: Analyst Decision
