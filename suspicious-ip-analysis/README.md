@@ -38,8 +38,9 @@ Command and Control (TA0011) // Botnet C2
 - Labels it as botnet_cc — a botnet Command & Control server (C2), meaning this IP controls infected machines (bots)
 - Confidence: 100%, marked as compromised
 
+<img width="1399" height="921" alt="Screenshot 2026-06-16 at 0 17 31" src="https://github.com/user-attachments/assets/c9d258f0-cec7-4133-8e6a-afe93b28f741" />
 
-  
+
 ### Phase 3: VirusTotal
 - 0 detections
 - Despite ThreatFox flagging this IP with 100% confidence, VirusTotal showed no vendor detections — likely because the IP was newly reported (first seen one day prior) and threat intelligence had not yet propagated
