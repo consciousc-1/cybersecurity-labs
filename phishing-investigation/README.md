@@ -42,5 +42,4 @@ not T1566.002 — Spearphishing Link (but closest to since since its not a targe
 ### Phase 5: Analyst Decision
 - Verdict: True Positive — phishing email
 - Safe handling: never click the links — inspect by hovering to reveal the real URL, viewing raw email source and analyzing any suspicious URLs in a sandbox (URLScan.io / Any.Run) rather than visiting them
-- Response: report the spoofed domain (alerting-services[.]com) to its registrar and hosting provider for suspension/takedown, and block it at the email gateway and firewall to prevent further delivery
-- User guidance: advise the reporting user not to interact with the email and to delete it
+- Aciton: report the spoofed domain (alerting-services[.]com) to its registrar and hosting provider for suspension/takedown and block it at the email gateway and firewall to prevent further delivery
