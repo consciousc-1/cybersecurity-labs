@@ -20,6 +20,7 @@ Threat intelligence enrichment and analyst triage decision-making
 ## MITRE ATT&CK
 Command and Control (TA0011) // Botnet C2
 
+<img width="1487" height="572" alt="Screenshot 2026-06-16 at 13 30 36" src="https://github.com/user-attachments/assets/e79901c4-d47e-4cd8-9dd2-30b57801ccb1" />
 
 
 ## Complete Methodology & Investigation
