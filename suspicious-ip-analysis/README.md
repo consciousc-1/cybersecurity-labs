@@ -52,13 +52,12 @@ Command and Control (TA0011) // Botnet C2
 ### Phase 4: AbuseIPDB
 - Confidence of Abuse: 2% — reported only once, a week ago
 - Host: Alibaba Cloud (data center / web hosting) — the kind of infrastructure attackers rent briefly to host C2, then abandon
-- A low score does not mean safe — it means few people have reported it yet
+- IMPORTANT: A low score does not mean safe — it means few people have reported it yet
 
 <img width="1382" height="879" alt="Screenshot 2026-06-16 at 0 29 29" src="https://github.com/user-attachments/assets/4928f2ce-fb33-41dd-9b24-2c2cfaf7bbbf" />
 
-
 ### Phase 5: Why the Tools Disagree
-The two sources disagree: ThreatFox (behavioral malware tracking) confirms active C2, while AbuseIPDB (user reports) shows almost nothing. A reputation score alone can't clear an IP — a freshly-deployed C2 on cloud hosting can look clean on AbuseIPDB while being actively malicious. Behavioral feeds and reputation databases must be used together.
+The two sources disagree: ThreatFox (behavioral malware tracking) confirms active C2, while AbuseIPDB (user reports) shows almost nothing. A reputation score alone can't clear an IP — a freshly-deployed C2 on cloud hosting can look clean on AbuseIPDB while being actively malicious. That means that behavioral feeds and reputation databases must be used together.
 
 
 
