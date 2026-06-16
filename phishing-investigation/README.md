@@ -33,7 +33,10 @@ T1566 — Phishing  // not T1566.002 Spearphishing Link since it's not a targete
 ### Phase 2: Sender Analysis (spoofed domain)
 - Sender display name: American Express
 - Actual sender domain: alerting-services[.]com (real domain is americanexpress.com)
-- Would check the actual sending domain's registration age via WHOIS
+- Checked the actual sending domain's registration age via WHOIS ( here olde probably because simulation )
+
+<img width="854" height="872" alt="Screenshot 2026-06-16 at 23 09 29" src="https://github.com/user-attachments/assets/79188e5f-7c6e-486d-b0e8-455bd1c8850d" />
+
 
 ### Phase 3: Content Red Flags
 - Urgency: "To help us keep your account safe, can you please confirm this request?" pressures the user to act fast
@@ -43,8 +46,12 @@ T1566 — Phishing  // not T1566.002 Spearphishing Link since it's not a targete
 
 <img width="1291" height="784" alt="Screenshot 2026-06-16 at 19 15 48" src="https://github.com/user-attachments/assets/4e23fb8b-8aa1-49d6-8310-7c9720af4211" />
 
+
   
 - Would hover (NOT click) over buttons to reveal the real URL or view the raw source via "Inspect"
+
+<img width="906" height="637" alt="Screenshot 2026-06-16 at 23 28 22" src="https://github.com/user-attachments/assets/4fbc9bb1-da53-43d0-9ea8-1791f0a31726" />
+
   
 ### Phase 4: Findings
 - Spoofed sender domain (alerting-services[.]com) impersonating American Express
@@ -56,4 +63,5 @@ T1566 — Phishing  // not T1566.002 Spearphishing Link since it's not a targete
 - True Positive — phishing email
 - Safe handling: never click the links — inspect by hovering to reveal the real URL, viewing the raw email source, and analyzing any suspicious URLs in a sandbox
   ( f.e URLScan.io / Any.Run) rather than visiting them
+- always use domain suspension 
 - Action: report the spoofed domain (alerting-services[.]com) to its registrar and hosting provider for takedown and block it at the email gateway and firewall to prevent further delivery
