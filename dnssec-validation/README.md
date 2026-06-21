@@ -4,7 +4,7 @@
 Verifying DNSSEC (Domain Name System Security Extensions) on a signed vs. an unsigned domain using dig and DNSViz
 
 ## Objective
-I want to confirm if the domain is cryptographically signed and validated and compare a secured domain against an unsecured one and understand what threat DNSSEC blocks
+Confirming if the domain is cryptographically signed and validated and compare a secured domain against an unsecured one and understand what threat DNSSEC blocks
 
 ## Scenario
 A domain's DNS responses need to be checked to determine if they are protected against tampering (spoofing / cache poisoning) or if they can be faked and undetected 
@@ -18,14 +18,14 @@ DNS security verification and understanding of the DNSSEC chain of trust
 
 ## MITRE ATT&CK
 Not a single technique — DNSSEC is a defensive control. Relevant attacker behavior it mitigates:
-- T1557 — Adversary-in-the-Middle  // DNS spoofing / response tampering
-- T1565.002 — Data Manipulation: Transmitted Data Manipulation
+- T1557 — Adversary-in-the-Middle - attacker inserts themselves into the middle
+- T1565.002 — Transmitted Data Manipulation - attacker edits DNS and sends victim f.e to a malicious IP
 
 ## Background: What DNSSEC Does
 - Normal DNS has no authentication — a forged response can redirect a user to a malicious server (DNS spoofing / cache poisoning)
 - DNSSEC adds cryptographic signatures so a resolver can verify a DNS answer is authentic and unmodified
-- IMPORTANT: DNSSEC provides authenticity and integrity, NOT encryption — the query is still visible (encryption is a separate control: DoH (DNS over HTTPS) / DoT (DNS over TLS))
-- Key records: RRSIG (Resource Record Signature) = the signature, DNSKEY (DNS Public Key) = the verifying key, DS (Delegation Signer) = links a child zone to its parent, NSEC/NSEC3 (Next Secure) = proves a record does not exist
+- IMPORTANT: DNSSEC gives authenticity and integrity, NOT encryption — the query is still visible, it does not hide the DNS from anyone watching the network. Encrypting that traffic is a separate feature (DoH or DoT), not part of DNSSEC
+- Key records: RRSIG (Resource Record Signature) = the signature, DNSKEY (DNS Public Key) = the verifying key, DS (Delegation Signer) = links a child zone to its parent (as seen in DNSViz), NSEC/NSEC3 (Next Secure) = proves a record does not exist
 
 ## Complete Methodology & Investigation
 
