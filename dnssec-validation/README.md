@@ -35,15 +35,22 @@ Not a single technique — DNSSEC is a defensive control. Relevant attacker beha
 - Algorithm 13 = ECDSA P-256 with SHA-256, a modern signing algorithm
 - The signature is time-bound (inception + expiration ~2 days apart) — signatures must be re-signed regularly, limiting replay
 
+<img width="1431" height="529" alt="Screenshot 2026-06-20 at 13 32 24" src="https://github.com/user-attachments/assets/929c7f35-75b4-47f0-b94b-1a7c5f61cd21" />
+
+
 ### Phase 2: Existence vs. Validation (the resolver matters)
 - Default resolver: flags showed qr rd ra — signatures existed, but NO ad (Authenticated Data) flag = not validated
 - Cloudflare resolver: dig @1.1.1.1 cloudflare.com +dnssec — flags showed qr rd ra ad = the resolver validated the signatures
 - Lesson: DNSSEC protection requires BOTH the domain to publish signatures AND the resolver to validate them. A signed domain gives no protection if the resolver ignores the signatures
 
+<img width="1438" height="707" alt="Screenshot 2026-06-20 at 13 57 40" src="https://github.com/user-attachments/assets/b5cb2f85-fa06-4a3e-82c3-0eaeebc7fa40" />
+
 ### Phase 3: Querying an Unsigned Domain (google.com)
 - Ran: dig @1.1.1.1 google.com +dnssec (same validating resolver as Phase 2)
 - No RRSIG record, no ad flag — even though the resolver does validate
 - The absence is the point: google.com publishes no DNSSEC signatures, so there is nothing to validate
+
+<img width="1439" height="412" alt="Screenshot 2026-06-20 at 13 57 54" src="https://github.com/user-attachments/assets/3a52ec5a-0a2c-4509-a1d8-0fc5c7a8b0fb" />
 
 ### Phase 4: Visual Confirmation (DNSViz)
 - cloudflare.com: full chain of trust secure (teal) from root (.) → com → cloudflare.com. Status: Secure across RRset, DNSKEY/DS/NSEC, and Delegation
