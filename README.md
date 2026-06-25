@@ -7,6 +7,7 @@ SOC analyst labs covering threat detection and investigation. Built while prepar
 * [Brute Force Detection](https://github.com/consciousc-1/cybersecurity-labs/blob/main/brute-force-detection) — Sentinel KQL detection rule for failed-logon brute force (T1110)
 * [Phishing Investigation](https://github.com/consciousc-1/cybersecurity-labs/blob/main/phishing-investigation) — Email-based phishing analysis (T1566)
 * [Suspicious IP Analysis](https://github.com/consciousc-1/cybersecurity-labs/blob/main/suspicious-ip-analysis) — Threat intelligence enrichment of a botnet C2 IP (OSINT triage, T1071)
+* [DNSSEC Validation](https://github.com/consciousc-1/cybersecurity-labs/blob/main/dnssec-validation) — Signed vs. unsigned domain comparison using dig and DNSViz, mapped to the AiTM/DNS-spoofing threat it mitigates
 
 ## Skills
 
@@ -14,10 +15,10 @@ SOC analyst labs covering threat detection and investigation. Built while prepar
 * Windows Security Event analysis (Event ID 4625)
 * Phishing email analysis and triage
 * Threat intelligence enrichment (ThreatFox, VirusTotal, AbuseIPDB)
-* MITRE ATT&CK (T1110, T1566, TA0011)
+* DNS security and DNSSEC chain-of-trust validation
+* MITRE ATT&CK (T1110, T1566, TA0011, T1557)
 * Threat detection & triage
 
 ## Roadmap
 
-* DNSSEC and DNS security
 * Additional MITRE techniques (T1078 Valid Accounts)
