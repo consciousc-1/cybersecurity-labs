@@ -57,6 +57,8 @@ Not a single technique — DNSSEC is a defensive control. Relevant attacker beha
 - google.com: root and com zones are signed, but google.com's own records show Insecure (13). The chain of trust does not extend to google.com
 - Note: "Insecure" = unsigned (no DNSSEC), not "Bogus" (which would mean broken/invalid DNSSEC and show red)
 
+<img width="1404" height="774" alt="Screenshot 2026-06-20 at 14 21 42" src="https://github.com/user-attachments/assets/c966d0d2-38e6-4fb5-93d1-70565d7ae84a" />
+
 ### Phase 5: Findings
 | | cloudflare.com | google.com |
 |--|---------------|-----------|
